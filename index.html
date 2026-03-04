@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Para ti 💙</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.active {
+  display: flex;
+}
+
+/* Botones invisibles */
+.btn {
+  position: absolute;
+  cursor: pointer;
+}
+
+/* Ajustamos zonas clickeables aproximadas */
+
+/* Botón portada */
+#btn1 {
+  bottom: 20%;
+  width: 200px;
+  height: 80px;
+}
+
+/* Botón carta */
+#btn2 {
+  bottom: 15%;
+  left: 15%;
+  width: 220px;
+  height: 80px;
+}
+</style>
+</head>
+<body>
+
+<div class="section active" id="screen1">
+  <img src="portada.png">
+  <div class="btn" id="btn1"></div>
+</div>
+
+<div class="section" id="screen2">
+  <img src="carta.png">
+  <div class="btn" id="btn2"></div>
+</div>
+
+<div class="section" id="screen3">
+  <img src="invitacion.png">
+</div>
+
+<script>
+document.getElementById("btn1").onclick = function() {
+  document.getElementById("screen1").classList.remove("active");
+  document.getElementById("screen2").classList.add("active");
+}
+
+document.getElementById("btn2").onclick = function() {
+  document.getElementById("screen2").classList.remove("active");
+  document.getElementById("screen3").classList.add("active");
+}
+</script>
+
+</body>
+</html>
